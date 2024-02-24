@@ -1,0 +1,262 @@
+:root {
+	--wp-blue-light: #2271b1;
+	--wp-blue-dark: #0a4b78;
+}
+
+button {
+	cursor: pointer;
+}
+
+form {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 2rem;
+}
+
+.description {
+	padding-bottom: 0.5em;
+}
+
+.nav-tab {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 0.5em;
+}
+
+.nav-tab-active {
+	pointer-events: none;
+}
+
+.instructions {
+	text-align: center;
+	margin: 0;
+}
+
+.buttons {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+}
+
+.checkbox-wrapper .checkbox {
+	position: relative;
+	flex-shrink: 0;
+	appearance: none;
+	background-color: #dfe1e4;
+	border-radius: 4.5rem;
+	border-style: none;
+	width: 1.875rem;
+	height: 1.25rem;
+	margin: 0;
+}
+
+.checkbox-wrapper .checkbox::before {
+	position: absolute;
+	top: -6px;
+	right: -6px;
+	left: -6px;
+	bottom: -6px;
+}
+
+.checkbox-wrapper input.checkbox::before {
+	content: '';
+}
+
+.checkbox-wrapper .checkbox,
+.checkbox-wrapper .checkbox::after {
+	transition: all 100ms ease-out;
+}
+
+.checkbox-wrapper .checkbox::after {
+	position: absolute;
+	background-color: #fff;
+	border-radius: 50%;
+	content: '';
+	width: 0.875rem;
+	height: 0.875rem;
+	left: 3px;
+	top: 3px;
+}
+
+.checkbox-wrapper .checkbox:hover {
+	background-color: #c9cbcd;
+	transition-duration: 0s;
+}
+
+.checkbox-wrapper .checkbox:checked {
+	background-color: var(--wp-blue-light, #6e79d6);
+}
+
+.checkbox-wrapper .checkbox:checked::after {
+	background-color: #fff;
+	left: 13px;
+}
+
+.checkbox-wrapper :focus:not(.focus-visible) {
+	outline: 0;
+}
+
+.checkbox-wrapper .checkbox:checked:hover {
+	background-color: var(--wp-blue-dark, #535db3);
+}
+
+.default-media {
+	background-color: #f0f0f1;
+	border-color: currentColor;
+	max-width: 6.25rem;
+	height: 100%;
+}
+
+.default-media-img {
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 6.25rem;
+	margin: auto;
+}
+
+.default-media-title {
+	background-color: rgba(255, 255, 255, 0.8);
+	border-top: 1px solid;
+	text-align: center;
+	padding: 0.25em;
+}
+
+.epk-medias-container {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 1rem;
+	align-items: center;
+	border: 1px solid;
+	border-radius: 0.25rem;
+	padding: 0.25rem;
+}
+
+.epk-media-container {
+	display: grid;
+	grid-template-columns: 11rem 5fr 3.5rem;
+	border: 1px solid;
+	width: 100%;
+}
+
+.songs-container .epk-media-container,
+.videos-container .epk-media-container {
+	grid-template-columns: 8rem 5fr 3.5rem;
+}
+
+.epk-media-container img {
+	align-self: center;
+	max-width: min(10rem, 100%);
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.epk-media-controls {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: end;
+	gap: 1rem;
+}
+
+.epk-media-controls .toggle-render {
+	align-self: center;
+}
+
+.reorder-buttons {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+	max-width: 3.5rem;
+	padding: 0.125rem;
+}
+
+.reorder-buttons button {
+	background-color: #e9e9ed;
+	max-width: 1.5rem;
+}
+
+.epk-medias-container .epk-media-container:first-of-type .move-up,
+.epk-medias-container .epk-media-container:last-of-type .move-down {
+	pointer-events: none;
+	color: transparent;
+}
+
+.epk-media-grid {
+	display: grid;
+	max-width: 100%;
+	grid-template-columns: auto;
+	gap: 0.25rem;
+	align-items: center;
+}
+
+.epk-media-grid a {
+	text-align: center;
+}
+
+.epk-media-grid img {
+	max-width: min(10rem, 100%);
+	margin: auto;
+	overflow: hidden;
+}
+
+.epk-medias-container-unselected {
+	padding-block: 1rem;
+}
+
+.epk-medias-container-unselected .epk-media-single {
+	cursor: pointer;
+}
+
+.default-media-img,
+.default-media-title {
+	border: 1px solid;
+}
+
+.default-media-img {
+	border-bottom-color: transparent;
+}
+
+.default-media-img:hover,
+.default-media-img:focus {
+	border-bottom-color: currentColor;
+}
+
+#epk-songs .default-media-img {
+	background-image: url('/wp-includes/images/media/audio.png');
+}
+
+#epk-videos .default-media-img {
+	background-image: url('/wp-includes/images/media/video.png');
+}
+
+#unselected-images .epk-media-single {
+	display: flex;
+	justify-content: center;
+}
+
+#unselected-images .epk-media-single img {
+	border: 1px solid transparent;
+}
+
+#unselected-images .epk-media-single:hover img,
+#unselected-images .epk-media-single:focus img {
+	border-color: currentColor;
+}
+
+@media (min-width: 400px) {
+	.epk-media-grid {
+		grid-template-columns: repeat(2, auto);
+	}
+}
+
+@media (min-width: 550px) {
+	.epk-media-grid {
+		grid-template-columns: repeat(3, auto);
+	}
+}
+
+@media (min-width: 750px) {
+	.epk-media-grid {
+		grid-template-columns: repeat(4, auto);
+	}
+}
