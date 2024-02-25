@@ -97,7 +97,7 @@ $media_library_url = '/wp-admin/upload.php';
 	</div>
 
 	<?php else : ?>
-		<?php printf('<p class="no-media">Please try adding a %s to the <a href="%s" title="Media Library">Media Library</a>.</p>', $slug, $media_library_url); ?>
+		<?php printf('<p class="no-media">Please try adding an %s file to the <a href="%s" title="Media Library">Media Library</a>.</p>', $slug, $media_library_url); ?>
 	<?php endif; ?>
 	<?php wp_reset_postdata(); ?>
 </form>
